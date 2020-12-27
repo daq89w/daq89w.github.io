@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<img src="pic/abstract.jpg" alt="abstract background">
+	<!-- <div class="circle"></div> -->
+	
+	<div class="container" id="glass">
+		<h2 class="seq">Hello everyone</h2>
+		<p class="seq">Let's go ahead and get this show on the road.</p>
+	</div>
+	
+	<h1>Glassmorphism Realized</h1>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+	
+	<script>
+		const glass = document.getElementById('glass');
+		
+		const tl = gsap.timeline({defaults: {ease: "power2.inout", duration: 2}});
+		
+		document.getElementById('glass').style.opacity = '1';
+		
+		tl.from('img', {x: '-10%', opacity: 0});
+		tl.from('.container', {opacity: 0.0, delay: .5, duration: 1}, "-=2");	
+		tl.from('.container', {x: '-20%', backdropFilter: 'blur(0px)'}, "-=1.1");
+		tl.from('.seq', {y: -30, opacity: 0, stagger: .2, duration: .5}, "-=.5");
+		tl.from('h1', {y: 20, clipPath: 'inset(0 0 100% 0)'}, "-=.8");
+	</script>
+</body>
+</html>
