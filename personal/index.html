@@ -3,35 +3,42 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Daqian's Portfolio</title>
 	<link rel="stylesheet" href="main.css">
 </head>
 <body>
-	<a href="form.php"><p>hello</p></a>
-	<a href="form.php"><img src="pic/abstract.jpg" alt="abstract background"></a>
-	<!-- <div class="circle"></div> -->
-	
-	<div class="container" id="glass">
-		<h2 class="seq">Hello everyone</h2>
-		<p class="seq">Let's go ahead and get this show on the road.</p>
+<header class="header">
+	<i>Daqian's Portfolio</i>
+</header>	
+	<div class="nav-main">
+		<nav class="nav">
+		<a href="home" class="nav-style"><b>Home</b></a> 
+		| 
+		<a href="about" class="nav-style"><b>About</b></a> 
+		|
+		<a href="work" class="nav-style" ><b>Work</b></a> 
+		|
+		<a href="contact" class="nav-style"><b>Contact</b></a> 
+		</nav>
+	</div>
+<section>
+	<div class="content">
+		<div class="column-left">
+			<div class="nav-left">
+				left nav
+			</div>
+		</div>
+		<div class="column-right">
+			<div class="nav-right">
+				content
+			</div>
+		</div>
 	</div>
 	
-	<h1>Glassmorphism Realized</h1>
+</section>
+<footer class="footer">
+	<b>Please follow me at Instagram, reddit, facebook, etc...</b>
+</footer>
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
-	
-	<script>
-		const glass = document.getElementById('glass');
-		
-		const tl = gsap.timeline({defaults: {ease: "power2.inout", duration: 2}});
-		
-		document.getElementById('glass').style.opacity = '1';
-		
-		tl.from('img', {x: '-10%', opacity: 0});
-		tl.from('.container', {opacity: 0.0, delay: .5, duration: 1}, "-=2");	
-		tl.from('.container', {x: '-20%', backdropFilter: 'blur(0px)'}, "-=1.1");
-		tl.from('.seq', {y: -30, opacity: 0, stagger: .2, duration: .5}, "-=.5");
-		tl.from('h1', {y: 20, clipPath: 'inset(0 0 100% 0)'}, "-=.8");
-	</script>
 </body>
 </html>
